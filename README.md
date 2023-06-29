@@ -22,9 +22,3 @@ This extension requires VS Code 1.79.0 or later.
 This extension contributes the following settings:
 
 - `teampilot-ai.refactor`: activate the refactor code extension
-
-## Release Notes
-
-### 0.0.1
-
-Initial release of Teampilot AI extension.
