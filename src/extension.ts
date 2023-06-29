@@ -39,11 +39,14 @@ export function activate(context: vscode.ExtensionContext) {
               ]
                 .filter(Boolean)
                 .join('\n\n')
-              const encodedPrompt = encodeURIComponent(prompt)
-              // const url = `https://teampilot.ai/new?prompt=${encodedPrompt}`
-              const url = `http://localhost:3000/start-chat?content=${encodedPrompt}`
 
-              vscode.env.openExternal(vscode.Uri.parse(url))
+              let uri = vscode.Uri.parse('http://localhost:3000/start-chat')
+              uri = uri.with({
+                // query: `content=${encodeURIComponent(prompt)}`,
+                fragment: prompt,
+              })
+
+              vscode.env.openExternal(uri)
             }
           })
       }
