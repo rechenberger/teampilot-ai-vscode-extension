@@ -14,8 +14,16 @@
   "contributes": {
     "commands": [
       {
-        "command": "teampilot-ai.helloWorld",
-        "title": "Hello World"
+        "command": "teampilot-ai.refactor",
+        "title": "Teampilot Refactor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "teampilot-ai.refactor",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorTextFocus"
       }
     ]
   },
