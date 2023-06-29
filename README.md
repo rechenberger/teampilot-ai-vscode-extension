@@ -15,7 +15,7 @@ https://teampilot.ai/team/sodefa/chat/cljh19jfz0003lf08kybrimv2
 
 ## Requirements
 
-This extension requires VS Code 1.46.0 or later.
+This extension requires VS Code 1.79.0 or later.
 
 ## Extension Settings
 
