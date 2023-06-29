@@ -28,12 +28,19 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window
           .showInputBox({ prompt: 'Enter your refactor message' })
           .then((value) => {
+            // const languageId = document.languageId
+            const fileExtension = document.fileName.split('.').pop()
             if (value !== undefined) {
-              const prompt = `${value} \n\`\`\`ts\n${text}\n\`\`\`\n\nErrors:\n${errors.join(
-                '\n'
-              )}`
+              const prompt = [
+                value,
+                `\`\`\`${fileExtension}\n${text}\n\`\`\``,
+                errors.length ? `Errors:\n${errors.join('\n')}` : '',
+              ]
+                .filter(Boolean)
+                .join('\n\n')
               const encodedPrompt = encodeURIComponent(prompt)
-              const url = `https://teampilot.ai/new?prompt=${encodedPrompt}`
+              // const url = `https://teampilot.ai/new?prompt=${encodedPrompt}`
+              const url = `http://localhost:3000/start-chat?content=${encodedPrompt}`
 
               vscode.env.openExternal(vscode.Uri.parse(url))
             }
