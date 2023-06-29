@@ -2,7 +2,7 @@
   "name": "teampilot-ai",
   "displayName": "Teampilot AI",
   "description": "Use teampilot.ai directly in vscode 🔥",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "url": "https://github.com/rechenberger/teampilot-ai-vscode-extension"
   },

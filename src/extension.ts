@@ -11,7 +11,12 @@ export function activate(context: vscode.ExtensionContext) {
         const document = editor.document
         const selection = editor.selection
 
-        const text = document.getText(selection)
+        let text = document.getText(selection)
+
+        // If no text is selected, get the whole document
+        if (selection.isEmpty) {
+          text = document.getText()
+        }
 
         // Get all diagnostics for the current file
         const diagnostics = vscode.languages.getDiagnostics(document.uri)
