@@ -28,12 +28,13 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window
           .showInputBox({ prompt: 'Enter your refactor message' })
           .then((value) => {
-            // const languageId = document.languageId
+            const languageId = document.languageId
             const fileExtension = document.fileName.split('.').pop()
+            const languageCode = fileExtension || languageId
             if (value !== undefined) {
               const prompt = [
                 value,
-                `\`\`\`${fileExtension}\n${text}\n\`\`\``,
+                `\`\`\`${languageCode}\n${text}\n\`\`\``,
                 errors.length ? `Errors:\n${errors.join('\n')}` : '',
               ]
                 .filter(Boolean)
