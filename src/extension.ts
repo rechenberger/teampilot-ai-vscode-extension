@@ -40,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
                 .filter(Boolean)
                 .join('\n\n')
 
-              let uri = vscode.Uri.parse('http://localhost:3000/start-chat')
+              let uri = vscode.Uri.parse('https://teampilot.ai/start-chat')
               uri = uri.with({
                 // query: `content=${encodeURIComponent(prompt)}`,
                 fragment: prompt,
